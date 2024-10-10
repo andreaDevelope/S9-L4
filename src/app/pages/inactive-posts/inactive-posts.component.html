@@ -1,1 +1,21 @@
-<p>inactive-posts works!</p>
+<div class=".container mt-3">
+  <div class="row">
+    <div class="col" *ngFor="let inactPost of postsinactArr">
+      <div class="card">
+        <h2 class="card-body">{{ inactPost.title }}</h2>
+
+        <ul class="">
+          <li class="list-group-item" *ngFor="let actTag of inactPost.tags">
+            {{ actTag }}
+          </li>
+          <button
+            class="ms-3 p-1 btn btn-info"
+            [routerLink]="['posts-details', inactPost.id]"
+          >
+            DETTAGLI
+          </button>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

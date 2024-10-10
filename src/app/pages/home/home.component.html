@@ -1,4 +1,4 @@
-<div class="card px-3 mt-3" *ngIf="featuredPost">
+<div class="card px-3 mt-3 text-center" *ngIf="featuredPost">
   <div class="card px-3">
     <h2 class="card-body">{{ featuredPost.title }}</h2>
     <ul>
@@ -6,16 +6,18 @@
         {{ tag }}
       </li>
     </ul>
-    <button
-      class="ms-3 p-1 btn btn-info"
-      [routerLink]="['posts-details', featuredPost.id]"
-    >
-      DETTAGLI
-    </button>
+    <div class="ps-4">
+      <button
+        class="p-1 btn btn-info my-2 mx-auto"
+        [routerLink]="['posts-details', featuredPost.id]"
+      >
+        DETTAGLI
+      </button>
+    </div>
   </div>
 </div>
 
-<div class=".container mt-3">
+<div class=".container mt-3 text-center">
   <div class="row">
     <div class="col" *ngFor="let post of postsArr">
       <div class="card">
@@ -26,7 +28,7 @@
             {{ tag }}
           </li>
           <button
-            class="ms-3 p-1 btn btn-info"
+            class="p-1 btn btn-info"
             [routerLink]="['posts-details', post.id]"
           >
             DETTAGLI

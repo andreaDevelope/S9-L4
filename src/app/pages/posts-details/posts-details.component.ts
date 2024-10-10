@@ -12,16 +12,13 @@ export class PostsDetailsComponent {
   variable!: iPosts | undefined;
   constructor(private route: ActivatedRoute) {}
   ngOnInit() {
-    // Corretto il blocco del subscribe
     this.route.params.subscribe((params) => {
-      // Estrai l'id del post dai parametri della rotta
       const postId = params['id'];
 
-      // Fetch del file JSON
       fetch('../../../assets/allegato/db.json')
         .then((res) => {
           if (res.ok) {
-            return res.json() as Promise<iJSONresponse>; // Corretto il tipo di ritorno
+            return res.json() as Promise<iJSONresponse>;
           } else {
             throw new Error('Errore nella richiesta');
           }
