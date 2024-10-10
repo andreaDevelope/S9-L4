@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { iJSONresponse, iPosts } from '../../modules/i-posts';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-posts-details',
@@ -9,7 +9,7 @@ import { ActivatedRoute, Route } from '@angular/router';
 })
 export class PostsDetailsComponent {
   post!: iPosts;
-  variable!: iPosts | undefined;
+  variable: iPosts | undefined;
   constructor(private route: ActivatedRoute) {}
   ngOnInit() {
     this.route.params.subscribe((params) => {
