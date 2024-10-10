@@ -15,7 +15,7 @@ export class PostsDetailsComponent {
     this.route.params.subscribe((params) => {
       const postId = params['id'];
 
-      fetch('../../../assets/allegato/db.json')
+      fetch('/assets/allegato/db.json')
         .then((res) => {
           if (res.ok) {
             return res.json() as Promise<iJSONresponse>;

@@ -9,7 +9,7 @@ import { iJSONresponse, iPosts } from '../../modules/i-posts';
 export class ActivePostsComponent {
   postsActArr: iPosts[] = [];
   ngOnInit() {
-    fetch('../../../assets/allegato/db.json')
+    fetch('/assets/allegato/db.json')
       .then((res) => {
         if (res.ok) {
           return <Promise<iJSONresponse>>res.json();

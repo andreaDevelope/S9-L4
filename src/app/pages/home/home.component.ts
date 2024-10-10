@@ -10,7 +10,7 @@ export class HomeComponent {
   featuredPost!: iPosts;
   postsArr: iPosts[] = [];
   ngOnInit() {
-    fetch('../../../assets/allegato/db.json')
+    fetch('/assets/allegato/db.json')
       .then((res) => {
         if (res.ok) {
           return <Promise<iJSONresponse>>res.json();
